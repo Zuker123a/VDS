@@ -1,0 +1,16 @@
+# https://docs.ansible.com/ansible/latest/command_guide/intro_adhoc.html#intro-adhoc
+- name: Create deployer user playbook
+  hosts: vds_prod
+  remote_user: root
+
+  tasks:
+    - name: Make sure sudo is installed
+      ansible.builtin.apt:
+        name: sudo
+        state: latest
+    - name: Create deployer user
+      ansible.builtin.user:
+        # TODO: use vars
+        # TODO: add deployer to sudo group
+        name: deployer
+        password: "$6$UhGYA03WFMSyyM/H$.e3wO/OogCQsz/NfxK0ukPC69fNWU037fgMeaHthCP9PKOeuidyaoizeEc4UrB0jDNXiarDsUmqHpc1zCU5hT."

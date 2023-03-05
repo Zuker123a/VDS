@@ -1,0 +1,8 @@
+# What - An application, stack or microservice (for example, database servers, web servers, and so on).
+# Where - A datacenter or region, to talk to local DNS, storage, and so on (for example, east, west).
+# When - The development stage, to avoid testing on production resources (for example, prod, test).
+vds_prod:
+  hosts:
+    fvds:
+      # TODO: use vars
+      ansible_host: 192.168.1.1
